@@ -127,7 +127,7 @@ class DiscordGSM():
     async def presense_load(self):
         # 1 = display number of servers, 2 = display total players/total maxplayers, 3 = display each server one by one every 10 minutes
         if len(self.server_list) == 0:
-            activity_text = f'Command: {DGSM_PREFIX}dgsm'
+            activity_text = f'Command: {DGSM_PREFIX}server'
         if PRESENCE_TYPE <= 1:
             activity_text = f'{len(self.server_list)} game servers'
         elif PRESENCE_TYPE == 2:
@@ -266,12 +266,12 @@ class DiscordGSM():
 
 bot = commands.Bot(command_prefix=DGSM_PREFIX)
 
-# command: dgsm
+# command: server
 # display dgsm informations
 @bot.command(name='dgsm', aliases=['discordgsm'], brief='Display DiscordGSM\'s informations')
 @commands.check_any(commands.has_role(ROLE_ID), commands.is_owner())
 async def _dgsm(ctx):
-    title = f'Command: {DGSM_PREFIX}dgsm'
+    title = f'Command: {DGSM_PREFIX}server'
     description = f'Thanks for using Discord Game Server Monitor ([DiscordGSM](https://github.com/DiscordGSM/DiscordGSM))\n'
     description += f'\nUseful commands:\n{DGSM_PREFIX}servers - Display the server list'
     description += f'\n{DGSM_PREFIX}serversrefresh - Refresh the server list'
