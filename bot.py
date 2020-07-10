@@ -66,9 +66,9 @@ class DiscordGSM():
 
     async def on_ready(self):
         # set username and avatar
-        with open('images/discordgsm.png', 'rb') as file:
+        with open('images/wolfie.png', 'rb') as file:
             try:
-                await bot.user.edit(username='DiscordGSM', avatar=file.read())
+                await bot.user.edit(username='DST Türkiye', avatar=file.read())
             except:
                 pass
 
